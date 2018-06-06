@@ -10,4 +10,5 @@
  {"topic":"Structure of finitely generated modules over PID", "ass":"Lang: Chapter III: 9, 11, 12, 13."},
  {"topic":"Jordan-Hölder Theorem, Tensor products", "ass":"No homework this week. Keep working on problems on Dedekind domain from last week."},
  {"topic":"Flat modules, Tor functor", "ass":"Lang: Chapter XVI: 1, 4, 6, 8 (Note: Just show part (iii) of Prop. 3.2), 9."},
- {"topic":"Representations of finite groups, Character Theory", "ass":"Serre: Chapter 2: 2.1, 2.2, 2.4."}]
+ {"topic":"Representations of finite groups, Character Theory", "ass":"Serre: Chapter 2: 2.1, 2.2, 2.4."},
+ {"topic":"Character Theory (continued)", "ass":"Serre: Chapter 2: 2.5, 2.6, 2.7."}]
