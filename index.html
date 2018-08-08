@@ -1,246 +1,249 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta content="text/html; charset=utf-8" http-equiv="content-type">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="js/lib/jquery/jquery-3.1.1.min.js"></script>
-	<script src="js/util.js"></script>
-	<script src="js/theme.js"></script>
-	<script>
-	 $(document).ready(function(){
-	     var th=themeSetter();
-	     $("#theme").attr("href",th.themeCSSPath());
-	 });
-	</script>
-	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/basic.css"/>
-	<link id="theme" rel="stylesheet" href="css/style-1.css"/>
-	<title>Chenyan Wu's Homepage</title>
+	    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="js/lib/jquery/jquery-3.1.1.min.js"></script>
+	    <script src="js/util.js"></script>
+	    <script src="js/theme.js"></script>
+	    <script>
+	     $(document).ready(function(){
+	         var th=themeSetter();
+	         $("#theme").attr("href",th.themeCSSPath());
+	     });
+	    </script>
+	    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
+	    <link rel="stylesheet" href="css/basic.css"/>
+	    <link id="theme" rel="stylesheet" href="css/style-1.css"/>
+	    <title>Chenyan Wu's Homepage</title>
     </head>
     <body>
-	<div class="fixed-float-nav">
-	    <div class="menu overlay-container large-icon">
-		<div class="submenu overlay-item">
-		    <div class="submenu-up">
-			<div class="menu-item flex-col align-center"><a href="#sec-top">Personal Information</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-teaching">Teaching</a></div>
-            <div class="menu-item flex-col align-center"><a href="#sec-workshops-seminars">Workshops & Seminars</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-research">Research & Publication</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-talks">Talks</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-conferences">Conferences</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-employment">Employment & Education</a></div>
-			<div class="menu-item flex-col align-center"><a href="#sec-misc">Miscellaneous</a></div>
-		    </div>
-		</div>
-		<div class="overlay-item button1 flex-col">
-		    <div class="ui-button fill-up flex-col center-center">
-			<i class="fa fa-plus fa-lg fa-fw" aria-hidden="true" aria-label="open menu"></i>
-		    </div>
-		</div>
-		<div class="overlay-item button2 flex-col">
-		    <div class="ui-button fill-up flex-col center-center">
-			<i class="fa fa-minus fa-lg fa-fw" aria-hidden="true" aria-label="collapse menu"></i>
-		    </div>
-		</div>
+	    <div class="fixed-float-nav">
+	        <div class="menu overlay-container large-icon">
+		        <div class="submenu overlay-item">
+		            <div class="submenu-up">
+			            <div class="menu-item flex-col align-center"><a href="#sec-top">Personal Information</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-teaching">Teaching</a></div>
+                        <div class="menu-item flex-col align-center"><a href="#sec-workshops-seminars">Workshops & Seminars</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-research">Research & Publication</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-talks">Talks</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-conferences">Conferences</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-employment">Employment & Education</a></div>
+			            <div class="menu-item flex-col align-center"><a href="#sec-misc">Miscellaneous</a></div>
+		            </div>
+		        </div>
+		        <div class="overlay-item button1 flex-col">
+		            <div class="ui-button fill-up flex-col center-center">
+			            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true" aria-label="open menu"></i>
+		            </div>
+		        </div>
+		        <div class="overlay-item button2 flex-col">
+		            <div class="ui-button fill-up flex-col center-center">
+			            <i class="fa fa-minus fa-lg fa-fw" aria-hidden="true" aria-label="collapse menu"></i>
+		            </div>
+		        </div>
+	        </div>
 	    </div>
-	</div>
-	<div  id="sec-top" class= "page">
-	    <div class="header">
-		    <h1>Chenyan Wu (吴晨彦)</h1>
-            <p><a href="https://orcid.org/0000-0002-5896-0122" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-5896-0122</a></p>
-		<p>Young Investigator at Shanghai Center for Mathematical
-		    Sciences<br/><a href="https://cywu.github.io/">https://cywu.github.io/</a></p>
-	    </div>
-	    <div class= "main">
-		<div>
-		    <p><b>Email:</b> chywu "at" fudan.edu.cn<br/></p>
-		    <p><b>Mailing Address:</b></p>
-		    <div class="flex-row">
-			<p class="flex-item">220 Handan Rd.<br/>  Fudan University<br/>
-			    Shanghai Center for Mathematical Sciences<br/>
-			    Guanghua East Main Building 2310<br/>
-			    Shanghai, 200433, China</p>
-			<p class="flex-item">上海数学中心，复旦大学<br/>
-			    邯郸路220号，光华楼东主楼2310室<br/>
-			    上海，200433，中国</p>
-		    </div>
-		</div>
+	    <div  id="sec-top" class= "page">
+	        <div class="header">
+		        <h1>Chenyan Wu (吴晨彦)</h1>
+                <p><a href="https://orcid.org/0000-0002-5896-0122" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-5896-0122</a></p>
+		        <p>Lecturer at School of Mathematics and Statistics, the University of Melbourne<br/><a href="https://cywu.github.io/">https://cywu.github.io/</a></p>
+	        </div>
+	        <div class= "main">
+		        <div>
+		            <p><b>Email:</b> chenyan.wu "at" unimelb.edu.au<br/></p>
+                    <p><b>Office:</b> Old Geology South 107<br/></p>
+		            <p><b>Mailing Address:</b></p>
+		            <div class="flex-row">
+			            <p class="flex-item">
+                            School of Mathematics and Statistics<br/>
+                            The University of Melbourne<br/>
+                            Victoria, 3010, Australia
+                        </p>
+			        </div>
+		        </div>
 
-		<h2 id="sec-teaching">Teaching</h2>
-		<ul>
-		    <li>Spring 2018 MATH130128.01 <a href="teaching/Spring2018_AbstractAlgebraII.html">Abstract Algebra II</a></li>
-		    <li>Spring 2017 MATH620040 <a href="teaching/Spring2017_CommutativeAlgebra.html">Commutative
-			Algebra</a></li>
-		    <li>Spring 2016 MATH620040 <a href="teaching/Spring2016_CommutativeAlgebra.html">Commutative
-			Algebra</a></li>
-		    <li>Spring 2015 MATH 4242 <a href="teaching/Spring2015_AppliedLinearAlgebra.html">Applied Linear
-			Algebra Section 001</a></li>
-		    <li>Fall 2014 MATH 4242 Applied Linear Algebra
-			<a href= "teaching/Fall2014_AppliedLinearAlgebra-020.html">Section 020</a> and
-			<a href="teaching/Fall2014_AppliedLinearAlgebra-030.html">Section 030</a></li>
-		    <li>Spring 2014 Math 5248 <a href="teaching/Spring2014_CryptologyAndNumberTheory.html">
-			Cryptology and Number Theory</a></li>
-		    <li>Spring 2014 Math 2374 <a href="teaching/Spring2014_MultivariableCalculusAndVectorAnalysis.html">
-			CSE Multivariable Calculus and Vector Analysis</a></li>
-		    <li>Fall 2013 Math 5248 <a href="teaching/Fall2013_CryptologyAndNumberTheory.html">
-			Cryptology and Number Theory</a></li>
-		    <li>Spring 2012 MATH 2373 <a href="teaching/Spring2012_LinearAlgebraDifferentialEquations.html">
-			CSE Linear Algebra and Differential Equations</a></li>
-		    <li>Fall 2011 MATH 4242 <a href="teaching/Fall2011_AppliedLinearAlgebra.html">Applied Linear
-			Algebra</a></li>
-		</ul>
+		        <h2 id="sec-teaching">Teaching</h2>
+		        <ul>
+		            <li>Spring 2018 MATH130128.01 <a href="teaching/Spring2018_AbstractAlgebraII.html">Abstract Algebra II</a></li>
+		            <li>Spring 2017 MATH620040 <a href="teaching/Spring2017_CommutativeAlgebra.html">Commutative
+			            Algebra</a></li>
+		            <li>Spring 2016 MATH620040 <a href="teaching/Spring2016_CommutativeAlgebra.html">Commutative
+			            Algebra</a></li>
+		            <li>Spring 2015 MATH 4242 <a href="teaching/Spring2015_AppliedLinearAlgebra.html">Applied Linear
+			            Algebra Section 001</a></li>
+		            <li>Fall 2014 MATH 4242 Applied Linear Algebra
+			            <a href= "teaching/Fall2014_AppliedLinearAlgebra-020.html">Section 020</a> and
+			            <a href="teaching/Fall2014_AppliedLinearAlgebra-030.html">Section 030</a></li>
+		            <li>Spring 2014 Math 5248 <a href="teaching/Spring2014_CryptologyAndNumberTheory.html">
+			            Cryptology and Number Theory</a></li>
+		            <li>Spring 2014 Math 2374 <a href="teaching/Spring2014_MultivariableCalculusAndVectorAnalysis.html">
+			            CSE Multivariable Calculus and Vector Analysis</a></li>
+		            <li>Fall 2013 Math 5248 <a href="teaching/Fall2013_CryptologyAndNumberTheory.html">
+			            Cryptology and Number Theory</a></li>
+		            <li>Spring 2012 MATH 2373 <a href="teaching/Spring2012_LinearAlgebraDifferentialEquations.html">
+			            CSE Linear Algebra and Differential Equations</a></li>
+		            <li>Fall 2011 MATH 4242 <a href="teaching/Fall2011_AppliedLinearAlgebra.html">Applied Linear
+			            Algebra</a></li>
+		        </ul>
 
-		<h2 id="sec-workshops-seminars">Seminars and Workshops</h2>
-		<ul>
-            <li><a href="http://math.fudan.edu.cn/">Events at Fudan University</a></li>
-            <li><a href="http://mcm.amss.cas.cn/">Events at Morningside Center of Mathematical Sciences</a></li>
-            <li><a href="seminar.html">My Visitors and Their Talks</a></li>
-            <li>July 10 - 12, 2017, <a href="conference/2017-number-theory.html">Workshop on Automorphic Forms and Automorphic Representations</a>.</li>
-		</ul>
+		        <h2 id="sec-workshops-seminars">Seminars and Workshops</h2>
+		        <ul>
+                    <li><a href="https://sites.google.com/site/jessegellredman/home/seminar">University of Melbourne Pure Mathematics Seminar</a></li>
+                    <li><a href="http://researchers.ms.unimelb.edu.au/~aghitza@unimelb/nuts/">Number Theory Seminar (Nuts) @ University of Melbourne</a></li>
+                    <li><a href="https://sites.google.com/site/yapingyanghomepage/representation-theory-seminar">University of Melbourne Representation Theory Seminar</a></li>
+                    <li><a href="http://math.fudan.edu.cn/">Events at Fudan University</a></li>
+                    <li><a href="http://mcm.amss.cas.cn/">Events at Morningside Center of Mathematical Sciences</a></li>
+                    <li><a href="seminar.html">My Visitors and Their Talks</a></li>
+                    <li>July 10 - 12, 2017, <a href="conference/2017-number-theory.html">Workshop on Automorphic Forms and Automorphic Representations</a>.</li>
+		        </ul>
 
-		<h2 id="sec-research">Reseach</h2>
-		<p>I am most interested in Number Theory and Arithmetic Geometry.
-		    Currently I am focusing on automorphic forms, theta
-		    correspondence, <var>L</var>-functions, endoscopy,
-		    periods and Abelian varieties.<br/></p>
-		
-		<h2 id="sec-publication">Publication and Preprints</h2>
-		<ol class="biblio">
-            <li class="biblio">
-			    Virtual Abelian Varieties of GL<sub>2</sub>-type. Submitted. Preprint. 2017. <a href="https://arxiv.org/abs/1507.03069">arXiv:1507.03069</a>.
-		    </li>
-		    <li class="biblio">A Critical Case of Rallis Inner Product Formula.  Sci. China Math. 60 (2017), no. 2, 201–222. <a href="https://arxiv.org/abs/1603.04123">arXiv:1603.04123</a>.</li>
-		    <li class="biblio">Periods and (<var>χ</var>, <var>b</var>)-Factors of Cuspidal Automorphic Forms of Symplectic Groups. With Dihua Jiang (江迪华). Accepted by Israel Journal of Mathematics. 2016. <a href="https://arxiv.org/abs/1507.03297">arXiv:1507.03297</a>.
-		    </li>
-		    <li class="biblio">On (<var>χ</var>, <var>b</var>)-factors of Cuspidal Automorphic Representations of Unitary Groups II. With Dihua Jiang (江迪华). Preprint. 2015.</li>
-		    <li class="biblio">On (<var>χ</var>, <var>b</var>)-factors of Cuspidal Automorphic Representations of Unitary Groups I. With Dihua Jiang (江迪华).  J. Number Theory 161 (2016), 88–118. <a href="https://arxiv.org/abs/1409.0767">arXiv:1409.0767</a>.</li>
-		    <li class="biblio">Irreducibility of Theta Lifting for Unitary Groups. J. Number Theory, 133(10):3296–3318, 2013. <a href="https://arxiv.org/abs/1409.0770">arXiv:1409.0770</a>.</li>
-		    <li class="biblio">Classification of Small Covers over Prisms up to Equivariant Cobordism. Adv. Math. (China),
-			    37(5):584–590, 2008.</li>
-		</ol>
+		        <h2 id="sec-research">Reseach</h2>
+		        <p>I am most interested in Number Theory and Arithmetic Geometry.
+		            Currently I am focusing on automorphic forms, theta
+		            correspondence, <var>L</var>-functions, endoscopy,
+		            periods and Abelian varieties.<br/></p>
+		        
+		        <h2 id="sec-publication">Publication and Preprints</h2>
+		        <ol class="biblio">
+                    <li class="biblio">
+			            Virtual Abelian Varieties of GL<sub>2</sub>-type. Submitted. Preprint. 2017. <a href="https://arxiv.org/abs/1507.03069">arXiv:1507.03069</a>.
+		            </li>
+                    <li class="biblio">Periods and (<var>χ</var>, <var>b</var>)-Factors of Cuspidal Automorphic Forms of Symplectic Groups. With Dihua Jiang (江迪华).  Israel J. Math. 225 (2018), no. 1, 267–320. <a href="https://arxiv.org/abs/1507.03297">arXiv:1507.03297</a>.
+		            </li>
+		            <li class="biblio">A Critical Case of Rallis Inner Product Formula.  Sci. China Math. 60 (2017), no. 2, 201–222. <a href="https://arxiv.org/abs/1603.04123">arXiv:1603.04123</a>.</li>
+		            <li class="biblio">On (<var>χ</var>, <var>b</var>)-factors of Cuspidal Automorphic Representations of Unitary Groups II. With Dihua Jiang (江迪华). Preprint. 2015.</li>
+		            <li class="biblio">On (<var>χ</var>, <var>b</var>)-factors of Cuspidal Automorphic Representations of Unitary Groups I. With Dihua Jiang (江迪华).  J. Number Theory 161 (2016), 88–118. <a href="https://arxiv.org/abs/1409.0767">arXiv:1409.0767</a>.</li>
+		            <li class="biblio">Irreducibility of Theta Lifting for Unitary Groups. J. Number Theory, 133(10):3296–3318, 2013. <a href="https://arxiv.org/abs/1409.0770">arXiv:1409.0770</a>.</li>
+		            <li class="biblio">Classification of Small Covers over Prisms up to Equivariant Cobordism. Adv. Math. (China),
+			            37(5):584–590, 2008.</li>
+		        </ol>
 
-		<h2 id="sec-talks">Talks</h2>
-		<ul>
-            <li>Lunch Seminar Talk: Periods and Arthur Parameters, Fudan University, Shanghai, China, Mar. 23, 2018
-            <li>Moduli spaces of virtual Abelian varieties, University of Melbourne, Melbourne, Australia, Feb. 5, 2018
-            <li>Theta correspondence, period integrals and Arthur parameters,
-			    Westlake Institute for Advanced Studies, Hangzhou, China, Dec. 17, 2017
-		    </li>
-            <li>Virtual Abelian Varieties of GL(2)-type, Fudan University, Shanghai, China, July 12, 2017
-		    </li>
-		    <li>Period Integrals, <var>L</var>-functions
-			and (<var>χ</var>, <var>b</var>)-theory,
-			Beijing International Center for Mathematical Research, Beijing, China, July 3, 2017
-		    </li>
-		    <li>Virtual Abelian Varieties of GL(2)-type, Fudan University, Shanghai, China, June 8, 2017
-		    </li>
-		    <li>Period Integrals, <var>L</var>-functions
-			and (<var>χ</var>, <var>b</var>)-theory,
-			National University of Singapore,
-			Singapore, Apr. 19, 2017
-		    </li>
-		    <li>Period Integrals, <var>L</var>-functions
-			and (<var>χ</var>, <var>b</var>)-theory,
-			Xiamen University,
-			Xiamen, China, Mar. 8, 2017
-		    </li>
-		    <li>Theta Correspondence, Periods
-			and (<var>χ</var>, <var>b</var>)-theory, Zhejiang University,
-			Hangzhou, China, Sept. 11, 2016
-		    </li>
-		    <li>Periods
-			and (<var>χ</var>, <var>b</var>)-theory, Taida Institute for
-			Mathematical Sciences, Taipei, China, Aug. 2, 2016
-		    </li>
-		    <li>Weil Conjectures for Abelian Varieties, Taida Institute for
-			Mathematical Sciences, Taipei, China, July 19 and July 26, 2016</li>
-		    <li>Involutive Property of Theta Correspondence, Shanghai Center for
-			Mathematical Sciences, Shanghai, China, April. 1, 2016</li>
-		    <li>Theta correspondence, periods and Arthur Parameters, Conference on
-			Eisenstein Series on Kac-Moody Groups and Applications to Physics at
-			KIAS, Seoul, South Korea, Nov. 16, 2015</li>
-		    <li>Local Jacquet-Langlands Correspondence, Shanghai Center for
-			Mathematical Sciences, Shanghai, China, Sept. 22, 2015</li>
-		    <li>Theta correspondence, periods
-			and <var>L</var>-functions, Morningside Center
-			of Mathematics, Beijing, China, July 17 and July 19, 2015</li>
-		    <li>Theta correspondence, periods and Arthur Parameters, University of
-			Missouri, Columbia, MO, USA, Apr. 21, 2015</li>
-		    <li>Theta correspondence, periods
-			and <var>L</var>-functions, Part III,
-			University of Minnesota, Minneapolis, MN, USA, Feb. 27, 2015</li>
-		    <li>Theta correspondence, periods
-			and <var>L</var>-functions, Part II,
-			University of Minnesota, Minneapolis, MN, USA, Feb. 13, 2015</li>
-		    <li>Theta correspondence, periods
-			and <var>L</var>-functions, Part I, University
-			of Minnesota, Minneapolis, MN, USA, Feb. 6, 2015</li>
-		    <li>Some applications of the Arthur trucation method, University of
-			Minnesota, Minneapolis, MN, USA, Nov. 14, 2014</li>
-		    <li>Periods
-			and (<var>χ</var>, <var>b</var>)-factors
-			of cuspidal automorphic forms of symplectic groups, University of
-			Minnesota, Minneapolis, MN, USA, Nov. 7, 2014</li>
-		    <li>On Gan-Gross-Prasad Conjecture, University of Minnesota, Minneapolis, MN, USA, Nov. 1
-			and Nov. 8, 2013</li>
-		    <li>Virtual Abelian Varieties
-			of GL<sub>2</sub>-type,
-			Max-Planck-Institut für Mathematik, Bonn, Germany, Dec. 6, 2012</li>
-		    <li>Rallis Inner Product Formula, University of Wisconsin-Madison, Madison, WI, USA,
-			Apr. 12 2012</li>
-		    <li>Theta correspondence for unitary groups, University of Minnesota, Minneapolis, MN, USA, 
-			Jan. 27, Feb. 3, Mar. 2 and Mar. 23, 2012</li>
-		    <li>Rallis Inner Product Formula
-			for Mp(2<var>n</var>)
-			and O(2<var>n</var> + 1),
-			University of Minnesota, Minneapolis, MN, USA, Oct. 7, 2011</li>
-		    <li>Moduli space of virtual Abelian varieties, Yale University, New Haven, CT, USA, Jan. 25, 2011</li>
-		</ul>
+		        <h2 id="sec-talks">Talks</h2>
+		        <ul>
+                    <li>Lunch Seminar Talk: Periods and Arthur Parameters, Fudan University, Shanghai, China, Mar. 23, 2018
+                    <li>Moduli spaces of virtual Abelian varieties, University of Melbourne, Melbourne, Australia, Feb. 5, 2018
+                    <li>Theta correspondence, period integrals and Arthur parameters,
+			            Westlake Institute for Advanced Studies, Hangzhou, China, Dec. 17, 2017
+		            </li>
+                    <li>Virtual Abelian Varieties of GL(2)-type, Fudan University, Shanghai, China, July 12, 2017
+		            </li>
+		            <li>Period Integrals, <var>L</var>-functions
+			            and (<var>χ</var>, <var>b</var>)-theory,
+			            Beijing International Center for Mathematical Research, Beijing, China, July 3, 2017
+		            </li>
+		            <li>Virtual Abelian Varieties of GL(2)-type, Fudan University, Shanghai, China, June 8, 2017
+		            </li>
+		            <li>Period Integrals, <var>L</var>-functions
+			            and (<var>χ</var>, <var>b</var>)-theory,
+			            National University of Singapore,
+			            Singapore, Apr. 19, 2017
+		            </li>
+		            <li>Period Integrals, <var>L</var>-functions
+			            and (<var>χ</var>, <var>b</var>)-theory,
+			            Xiamen University,
+			            Xiamen, China, Mar. 8, 2017
+		            </li>
+		            <li>Theta Correspondence, Periods
+			            and (<var>χ</var>, <var>b</var>)-theory, Zhejiang University,
+			            Hangzhou, China, Sept. 11, 2016
+		            </li>
+		            <li>Periods
+			            and (<var>χ</var>, <var>b</var>)-theory, Taida Institute for
+			            Mathematical Sciences, Taipei, China, Aug. 2, 2016
+		            </li>
+		            <li>Weil Conjectures for Abelian Varieties, Taida Institute for
+			            Mathematical Sciences, Taipei, China, July 19 and July 26, 2016</li>
+		            <li>Involutive Property of Theta Correspondence, Shanghai Center for
+			            Mathematical Sciences, Shanghai, China, April. 1, 2016</li>
+		            <li>Theta correspondence, periods and Arthur Parameters, Conference on
+			            Eisenstein Series on Kac-Moody Groups and Applications to Physics at
+			            KIAS, Seoul, South Korea, Nov. 16, 2015</li>
+		            <li>Local Jacquet-Langlands Correspondence, Shanghai Center for
+			            Mathematical Sciences, Shanghai, China, Sept. 22, 2015</li>
+		            <li>Theta correspondence, periods
+			            and <var>L</var>-functions, Morningside Center
+			            of Mathematics, Beijing, China, July 17 and July 19, 2015</li>
+		            <li>Theta correspondence, periods and Arthur Parameters, University of
+			            Missouri, Columbia, MO, USA, Apr. 21, 2015</li>
+		            <li>Theta correspondence, periods
+			            and <var>L</var>-functions, Part III,
+			            University of Minnesota, Minneapolis, MN, USA, Feb. 27, 2015</li>
+		            <li>Theta correspondence, periods
+			            and <var>L</var>-functions, Part II,
+			            University of Minnesota, Minneapolis, MN, USA, Feb. 13, 2015</li>
+		            <li>Theta correspondence, periods
+			            and <var>L</var>-functions, Part I, University
+			            of Minnesota, Minneapolis, MN, USA, Feb. 6, 2015</li>
+		            <li>Some applications of the Arthur trucation method, University of
+			            Minnesota, Minneapolis, MN, USA, Nov. 14, 2014</li>
+		            <li>Periods
+			            and (<var>χ</var>, <var>b</var>)-factors
+			            of cuspidal automorphic forms of symplectic groups, University of
+			            Minnesota, Minneapolis, MN, USA, Nov. 7, 2014</li>
+		            <li>On Gan-Gross-Prasad Conjecture, University of Minnesota, Minneapolis, MN, USA, Nov. 1
+			            and Nov. 8, 2013</li>
+		            <li>Virtual Abelian Varieties
+			            of GL<sub>2</sub>-type,
+			            Max-Planck-Institut für Mathematik, Bonn, Germany, Dec. 6, 2012</li>
+		            <li>Rallis Inner Product Formula, University of Wisconsin-Madison, Madison, WI, USA,
+			            Apr. 12 2012</li>
+		            <li>Theta correspondence for unitary groups, University of Minnesota, Minneapolis, MN, USA, 
+			            Jan. 27, Feb. 3, Mar. 2 and Mar. 23, 2012</li>
+		            <li>Rallis Inner Product Formula
+			            for Mp(2<var>n</var>)
+			            and O(2<var>n</var> + 1),
+			            University of Minnesota, Minneapolis, MN, USA, Oct. 7, 2011</li>
+		            <li>Moduli space of virtual Abelian varieties, Yale University, New Haven, CT, USA, Jan. 25, 2011</li>
+		        </ul>
 
-		<h2 id="sec-conferences">Conferences, Workshops and Short Visits</h2>
-		<ul>
-            <li><a href="http://www.prime.sdu.edu.cn/info/1044/1324.htm">Automorphic Forms and L-functions, a Conference in Celebration of Dorian Goldfeld's 71st Birthday</a>, Qingdao Campus of Shandong University, Qingdao, China, June 18 - 22, 2018</li>
-            <li><a href="http://www.math.zju.edu.cn/news.asp?id=7433">Workshop on "Automorphic Forms, Geometry and Representation Theory"</a>, Zhejiang University, Hangzhou, China, June 4 - 8, 2018</li>
-            <li><a href="http://www.wias.org.cn/chinese-detail-371-9116.html">Number Theory Seminar</a>, Westlake Institute for Advanced Studies, Hangzhou, China, Apr. 21 - 22, 2018</li>
-            <li><a href="http://amss.cas.cn/mzxsbg/201712/t20171215_4916462.html">Wei Zhang's Talks</a>, Morningside Center of Mathematics, Chinese Academy of Sciences, Beijing, China, Jan. 2 - 12, 2018</li>
-            <li><a href="http://www.scms.fudan.edu.cn/Data/View/1000.html">2017 - 2018 Young Mathematician Forum</a>, Fudan University, Shanghai, China, Dec. 17 - 19, 2017</li>
-            <li><a href="http://www.wias.org.cn/chinese-detail-371-8679.html">Number Theory Seminar</a>, Westlake Institute for Advanced Studies, Hangzhou, China, Dec. 16 - 17, 2017</li>
-            <li>Visiting Professor Shou-Wu Zhang (张寿武), Princeton University, Princeton, NJ, USA, Oct. 1 - Nov. 30, 2017</li>
-            <li><a href="http://www.mcm.ac.cn/activities/programs/svrt2017/201707/t20170713_378055.html">Summer School on Shimura Varieties and Related Topics</a>, Morningside Center for Mathematics, Beijing, China, Sept. 11 - 22, 2017</li>
-            <li>Morningside Center for Mathematics, Beijing, China, Aug. 17 - 25, 2017</li>
-            <li>Morningside Center for Mathematics, Beijing, China, Aug. 3 - 9, 2017</li>
-		    <li><a href="conference/2017-number-theory.html">Workshop on Automorphic Forms and Automorphic Representations</a>, Shanghai Center for Mathematical Sciences, Shanghai, China, July 10 - 12, 2017</li>
-		    <li><a href="http://bicmr.pku.edu.cn/meeting-22?catid=KiQhKyYs">Workshop on Lie Group Representations and Automorphic Forms</a>, Beijing International Center for Mathematical Research, Beijing, China, July 3 - 8, 2017</li>
-		    <li><a href="http://homepage.fudan.edu.cn/mchen/conferences/2017-fudan-kaist/">FUDAN-KAIST Joint Workshop on Algebra and Geometry</a>, Shanghai, China, June 6 - 10, 2017</li>
-		    <li><a href="http://ww1.math.nus.edu.sg/events/Representation%20Theory%20and%20Number%20Theory%20workshop-2017.pdf">Representation Theory and Number Theory Workshop</a>, National University of Singapore, Singapore, Apr. 17 - 20, 2017</li>
-		    <li>2017 Young Mathematician Forum, Fudan University, Shanghai, China, Feb. 27 - Mar. 2, 2017</li>
-		    <li>Visiting Professor Dihua Jiang (江迪华), Zhejiang University, Hangzhou, China, Oct. 7 - 10, 2016</li>
-		    <li>Workshop on Number Theory at Zhejiang University, Hangzhou, China, Sept. 10 - 12, 2016</li>
-		    <li>Taida Institute for  Mathematical Sciences, Taipei, China, Visiting Professor Chang-Shou Lin (林長壽), July 17 - Aug. 7, 2016</li>
-		    <li><a href="http://prasad-heiermann.weebly.com/main-conference.html">Jean-Morlet Chair Research School and Conference on Relative Trace Formula, Periods,  <var>L</var>-functions, Harmonic Analysis and Langlands Functoriality</a>, CIRM, Marseille, France, May 16 - 27, 2016</li>
-		    <li><a href="http://home.kias.re.kr/MKG/h/EKM2015/">Eisenstein Series on Kac-Moody Groups and Application to Physics</a>, KIAS, Seoul, South Korea, Nov. 12 - 20, 2015</li>
-		    <li><a href="http://2015wnt.csp.escience.cn/dct/page/65580">Workshop on Number Theory</a>, Morningside Center for Mathematics, Beijing, China, July 16 - 31, 2015</li>
-		    <li>Past events are omitted, largely because I did not keep track.</li>
-		</ul>
+		        <h2 id="sec-conferences">Conferences, Workshops and Short Visits</h2>
+		        <ul>
+                    <li><a href="http://www.prime.sdu.edu.cn/info/1044/1324.htm">Automorphic Forms and L-functions, a Conference in Celebration of Dorian Goldfeld's 71st Birthday</a>, Qingdao Campus of Shandong University, Qingdao, China, June 18 - 22, 2018</li>
+                    <li><a href="http://www.math.zju.edu.cn/news.asp?id=7433">Workshop on "Automorphic Forms, Geometry and Representation Theory"</a>, Zhejiang University, Hangzhou, China, June 4 - 8, 2018</li>
+                    <li><a href="http://www.wias.org.cn/chinese-detail-371-9116.html">Number Theory Seminar</a>, Westlake Institute for Advanced Studies, Hangzhou, China, Apr. 21 - 22, 2018</li>
+                    <li><a href="http://amss.cas.cn/mzxsbg/201712/t20171215_4916462.html">Wei Zhang's Talks</a>, Morningside Center of Mathematics, Chinese Academy of Sciences, Beijing, China, Jan. 2 - 12, 2018</li>
+                    <li><a href="http://www.scms.fudan.edu.cn/Data/View/1000.html">2017 - 2018 Young Mathematician Forum</a>, Fudan University, Shanghai, China, Dec. 17 - 19, 2017</li>
+                    <li><a href="http://www.wias.org.cn/chinese-detail-371-8679.html">Number Theory Seminar</a>, Westlake Institute for Advanced Studies, Hangzhou, China, Dec. 16 - 17, 2017</li>
+                    <li>Visiting Professor Shou-Wu Zhang (张寿武), Princeton University, Princeton, NJ, USA, Oct. 1 - Nov. 30, 2017</li>
+                    <li><a href="http://www.mcm.ac.cn/activities/programs/svrt2017/201707/t20170713_378055.html">Summer School on Shimura Varieties and Related Topics</a>, Morningside Center for Mathematics, Beijing, China, Sept. 11 - 22, 2017</li>
+                    <li>Morningside Center for Mathematics, Beijing, China, Aug. 17 - 25, 2017</li>
+                    <li>Morningside Center for Mathematics, Beijing, China, Aug. 3 - 9, 2017</li>
+		            <li><a href="conference/2017-number-theory.html">Workshop on Automorphic Forms and Automorphic Representations</a>, Shanghai Center for Mathematical Sciences, Shanghai, China, July 10 - 12, 2017</li>
+		            <li><a href="http://bicmr.pku.edu.cn/meeting-22?catid=KiQhKyYs">Workshop on Lie Group Representations and Automorphic Forms</a>, Beijing International Center for Mathematical Research, Beijing, China, July 3 - 8, 2017</li>
+		            <li><a href="http://homepage.fudan.edu.cn/mchen/conferences/2017-fudan-kaist/">FUDAN-KAIST Joint Workshop on Algebra and Geometry</a>, Shanghai, China, June 6 - 10, 2017</li>
+		            <li><a href="http://ww1.math.nus.edu.sg/events/Representation%20Theory%20and%20Number%20Theory%20workshop-2017.pdf">Representation Theory and Number Theory Workshop</a>, National University of Singapore, Singapore, Apr. 17 - 20, 2017</li>
+		            <li>2017 Young Mathematician Forum, Fudan University, Shanghai, China, Feb. 27 - Mar. 2, 2017</li>
+		            <li>Visiting Professor Dihua Jiang (江迪华), Zhejiang University, Hangzhou, China, Oct. 7 - 10, 2016</li>
+		            <li>Workshop on Number Theory at Zhejiang University, Hangzhou, China, Sept. 10 - 12, 2016</li>
+		            <li>Taida Institute for  Mathematical Sciences, Taipei, China, Visiting Professor Chang-Shou Lin (林長壽), July 17 - Aug. 7, 2016</li>
+		            <li><a href="http://prasad-heiermann.weebly.com/main-conference.html">Jean-Morlet Chair Research School and Conference on Relative Trace Formula, Periods,  <var>L</var>-functions, Harmonic Analysis and Langlands Functoriality</a>, CIRM, Marseille, France, May 16 - 27, 2016</li>
+		            <li><a href="http://home.kias.re.kr/MKG/h/EKM2015/">Eisenstein Series on Kac-Moody Groups and Application to Physics</a>, KIAS, Seoul, South Korea, Nov. 12 - 20, 2015</li>
+		            <li><a href="http://2015wnt.csp.escience.cn/dct/page/65580">Workshop on Number Theory</a>, Morningside Center for Mathematics, Beijing, China, July 16 - 31, 2015</li>
+		            <li>Past events are omitted, largely because I did not keep track.</li>
+		        </ul>
 
-		<H2 id="sec-employment">Employment and Visiting Positions</h2>
-		<ul class= "plain"><li>Young Investigator, Shanghai Center for Mathematical Sciences, Sept. 2015 - present</li>
-		    <li>Dunham Jackson Assistance Professor, University of Minnesota, Aug. 29, 2011 - May 24, 2015, mainly working with Professor <a href= "http://www.math.umn.edu/~jiang034/">Dihua Jiang (江迪华)</a>.</li>
-		    <li>Visiting Max-Planck Institute for Mathematics, Sept. 1, 2012 - Aug.
-			31, 2013</li>
-		</ul>
+		        <H2 id="sec-employment">Employment and Visiting Positions</h2>
+		        <ul class= "plain">
+                    <li>Lecturer, School of Mathematics and Statistics, University of Melbourne, Aug. 2018 - present</li>
+                    <li>Young Investigator, Shanghai Center for Mathematical Sciences, Sept. 2015 - Aug. 2018</li>
+		            <li>Dunham Jackson Assistance Professor, University of Minnesota, Aug. 29, 2011 - May 24, 2015, mainly working with Professor <a href= "http://www.math.umn.edu/~jiang034/">Dihua Jiang (江迪华)</a>.</li>
+		            <li>Visiting Max-Planck Institute for Mathematics, Sept. 1, 2012 - Aug.
+			            31, 2013</li>
+		        </ul>
 
-		<h2 id="sec-education">Education</h2>
-		<ul class= "plain"><li>Ph.D. Mathematics, Columbia University, 2006–2011, Thesis Advisor:
-		    Professor <a href="https://web.math.princeton.edu/~shouwu/">Shou-Wu Zhang (张寿武)</a>;</li>
-		    <li>B.S. Mathematics, Fudan (复旦) University, 2002–2006.</li>
-		</ul>
+		        <h2 id="sec-education">Education</h2>
+		        <ul class= "plain"><li>Ph.D. Mathematics, Columbia University, 2006–2011, Thesis Advisor:
+		            Professor <a href="https://web.math.princeton.edu/~shouwu/">Shou-Wu Zhang (张寿武)</a>;</li>
+		            <li>B.S. Mathematics, Fudan (复旦) University, 2002–2006.</li>
+		        </ul>
 
-		<h2 id="sec-misc">Miscellaneous</h2>
-		<ul class="plain">
-            <li><a href="misc/disable-bing-auto-translation.html">How to Disable Bing's Auto Translation</a></li>
-		    <li><a href="misc/latex-challenges.html">LaTeX Challenges</a></li>
-		</ul>
+		        <h2 id="sec-misc">Miscellaneous</h2>
+		        <ul class="plain">
+                    <li><a href="misc/disable-bing-auto-translation.html">How to Disable Bing's Auto Translation</a></li>
+		            <li><a href="misc/latex-challenges.html">LaTeX Challenges</a></li>
+		        </ul>
 	    </div>
 	</div>
     </body>
