@@ -73,6 +73,16 @@ img{
     max-width:100%;
 }
 
+figure{
+    padding:0;
+    margin:0;
+}
+
+figcaption {
+    font: italic smaller sans-serif;
+    padding: 3px;
+}
+
 table { 
 	width:100%;
 	border-collapse: collapse;
