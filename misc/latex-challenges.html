@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta content="text/html; charset=utf-8" http-equiv="content-type">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="../js/lib/jquery/jquery-3.1.1.min.js"></script>
-	<script src="./js/util.js"></script>
-	<script src="../js/theme.js"></script>
-	<script>
-	 $(document).ready(function(){
-	     var th=themeSetter();
-	     $("#theme").attr("href",th.themeCSSPath());
-	 });
-	</script>
-	<link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="../css/basic.css"/>
-	<link id="theme" rel="stylesheet" href="../css/style-1.css"/>
-	<title>LaTeX Challenges :)</title>
+	    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="../js/util.js"></script>
+	    <script src="../js/theme.js"></script>
+	    <script>
+         document.addEventListener("DOMContentLoaded",(e)=>{
+             const th=themeSetter();
+             const themeElement=document.getElementById("theme");
+             themeElement.setAttribute("href", th.themeCSSPath());
+	     });
+	    </script>
+	    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css"/>
+	    <link rel="stylesheet" href="../css/basic.css"/>
+	    <link id="theme" rel="stylesheet" href="../css/style-1.css"/>
+	    <title>LaTeX Challenges :)</title>
     </head>
     <body>
-	<div class="page">
-	    <div class="header">
-		<h1>LaTeX Challenges for Fun</h1>
+	    <div class="page">
+	        <div class="header">
+		        <h1>LaTeX Challenges for Fun</h1>
+	        </div>
+	        <div class="main">
+		        <ul>
+		            <li>Typeset '(๑•̀ㅂ•́)و✧' in LaTeX. <br/>
+			            This emoticon involves Thai, Chinese, Japanese, Korean, Arabic... (╯°□°)╯︵ ┻━┻ <br/>
+			            Challenge accepted! <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.pdf">pdf »</a> <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.tex">tex »</a>
+		            </li>
+		        </ul>
+	        </div>
+	        <div class="footer">
+		        That's all for now.
+	        </div>
 	    </div>
-	    <div class="main">
-		<ul>
-		    <li>Typeset '(๑•̀ㅂ•́)و✧' in LaTeX. <br/>
-			This emoticon involves Thai, Chinese, Japanese, Korean, Arabic... (╯°□°)╯︵ ┻━┻ <br/>
-			Challenge accepted! <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.pdf">pdf »</a> <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.tex">tex »</a>
-		    </li>
-		</ul>
-	    </div>
-	    <div class="footer">
-		That's all for now.
-	    </div>
-	</div>
     </body>
 </html>

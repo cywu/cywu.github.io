@@ -1,11 +1,13 @@
+"use strict"
+
 // decouple this function
 function week2Date(startDate,i) {
     //Given startDate and an integer i
     //return a string indicating the range of dates of the i-th week since startDate.
     //Example format 2017/02/08 -- 2017/02/14
-    var date1= new Date(startDate);
+    const date1= new Date(startDate);
     date1.setDate(date1.getDate()+i*7);
-    var date2=new Date(startDate);
+    const date2=new Date(startDate);
     date2.setDate(date2.getDate()+i*7+6);
     return date2String(date1,"/")+ " -- " + date2String(date2,"/");
 
@@ -18,16 +20,16 @@ function date2String(dd,z) {
 
 function getDateNthDay(date, i, d) {
     // get date of i-th d-day of the month specified in date
-    var date1 = new Date(date);
+    const date1 = new Date(date);
     date1.setDate(1); //first day of the month
-    var dayDate1 = date1.getDay();
+    const dayDate1 = date1.getDay();
     //find i-th d-day
-    var dd = d - dayDate1 + 1 + i * 7;
+    let dd = d - dayDate1 + 1 + i * 7;
     if (dayDate1 <= d) {
 	dd = dd - 7;
     }
     //compute the total number of days in the given month
-    var lastDate = new Date(date1);
+    const lastDate = new Date(date1);
     lastDate.setMonth(lastDate.getMonth() + 1, 0);
     //test if dd is out of range
     if (dd < 1 || dd > lastDate.getDate()) {

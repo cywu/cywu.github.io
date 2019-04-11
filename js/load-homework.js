@@ -1,26 +1,38 @@
-var homeworkLoader=function(){
-    var homeworkElement;//will be initialised to the jquery element in which a table will form
-    var homeworkJSONFile="";
-    var setup=function(hwe,file){
-	homeworkElement=hwe;
-	homeworkJSONFile=file;
+"use strict"
+
+const homeworkLoader=function(homeworkTableElement,homeworkJSONFile){
+    
+    function loadHomework(startDate){
+        let xhr=new XMLHttpRequest();
+        xhr.addEventListener("load", (e)=>{
+            homeworkTableElement.appendChild(makeTable(xhr.response,startDate));
+        });
+        xhr.addEventListener("error",console.log);
+        xhr.open("GET", homeworkJSONFile);
+        xhr.responseType="json";
+        xhr.send();
     };
-    var loadHomework=function(startDate){
-	$.getJSON(homeworkJSONFile,function (hws) {
-	    $.each(hws,function (i,item){
-		
-		var trElem = $("<tr>").append($("<td>").text(week2Date(startDate,i)),
-					      $("<td>").text(item.topic),
-					      $("<td>").text(item.ass));
-		
-		homeworkElement.append(trElem);
-		
-	    } )
-	});
-    };
-    return {setup:setup,
-	    loadHomework:loadHomework};
+
+    return {loadHomework:loadHomework};
 
 };
+
+function makeTable(arr,startDate){
+    const tbody=document.createElement("tbody");
+    arr.forEach((item, i)=>{
+        let row=document.createElement("tr");
+        let date=document.createElement("td");
+        date.appendChild(document.createTextNode(week2Date(startDate,i)));
+        let topic=document.createElement("td");
+        topic.appendChild(document.createTextNode(item.topic));
+        let ass=document.createElement("td");
+        ass.appendChild(document.createTextNode(item.ass));
+        row.appendChild(date);
+        row.appendChild(topic);
+        row.appendChild(ass);
+        tbody.appendChild(row);
+    });
+    return tbody;
+}
 
 

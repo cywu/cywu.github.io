@@ -1,10 +1,12 @@
+"use strict"
+
 //Given today's date return theme CSS file path
-var themeSetter=function () {
-    var depth=(window.location.pathname.match(/\//g) || []).length;
-    var dirPrefix = Array(depth).join("../"); //to get to the `root' dir
-    var today=new Date();
-    var thisYear = today.getFullYear();
-    var holidayList = {
+const themeSetter=function () {
+    const depth=(window.location.pathname.match(/\//g) || []).length;
+    const dirPrefix = Array(depth).join("../"); //to get to the `root' dir
+    const today=new Date(2019,0,1);
+    const thisYear = today.getFullYear();
+    const holidayList = {
 	    "newYear1": {"name": "new-year",
 		             "date": new Date(thisYear, 0, 1),
 		             "fore": 0,
@@ -44,20 +46,20 @@ var themeSetter=function () {
 		         "aft": 4}
     };
     
-    var themeCSSPath = function() {
-	    var str=this.theme ();
+    function themeCSSPath() {
+	    const str=theme ();
 	    if (str===null) {
 	        str="1";
 	    }
 	    return dirPrefix + "css/style-" + str + ".css";
-    };
+    }
 
-    var theme = function () {
-	    var src = dirPrefix + "css/style1.css";
-	    for (h in holidayList) {
-	        var start = new Date(holidayList[h] ["date"]);
+    function theme() {
+	    const src = dirPrefix + "css/style1.css";
+	    for (let h in holidayList) {
+	        const start = new Date(holidayList[h] ["date"]);
 	        start.setDate(start.getDate() - holidayList[h]["fore"]);
-	        var end  = new Date(holidayList[h] ["date"]);
+	        const end  = new Date(holidayList[h] ["date"]);
 	        end.setDate(end.getDate() + holidayList[h] ["aft"]);
 	        if (today >= start && today < end) {
 		        return holidayList[h] ["name"];
@@ -68,9 +70,3 @@ var themeSetter=function () {
     return {theme:theme,
 	        themeCSSPath:themeCSSPath};
 };
-
-
-
-
-
-

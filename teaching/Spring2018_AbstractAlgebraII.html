@@ -3,20 +3,19 @@
     <head>
 	    <meta content="text/html; charset=utf-8" http-equiv="content-type">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <script src="../js/lib/jquery/jquery-3.1.1.min.js"></script>
 	    <script src="../js/util.js"></script>
 	    <script src="../js/theme.js"></script>
 	    <script src="../js/load-homework.js"></script>
 	    <script>
-	     $(document).ready(function(){
-	         var th=themeSetter();
-	         $("#theme").attr("href",th.themeCSSPath());
+         document.addEventListener("DOMContentLoaded",(e)=>{
+             const th=themeSetter();
+             const themeElement=document.getElementById("theme");
+             themeElement.setAttribute("href", th.themeCSSPath());
 
-	         var homeworkElement=$("#hw");
-	         var homeworkJSONFile="Spring2018_AbstractAlgebraII-homework.json";
-	         var startDate=new Date(2018,2,5);
-	         var hl=homeworkLoader();
-	         hl.setup(homeworkElement,homeworkJSONFile);
+	         const homeworkTable=document.getElementById("hw-table");
+	         const homeworkJSONFile="Spring2018_AbstractAlgebraII-homework.json";
+	         const startDate=new Date(2018,2,5);
+	         const hl=homeworkLoader(homeworkTable,homeworkJSONFile);
 	         hl.loadHomework(startDate);
 	     });
 	    </script>
@@ -58,7 +57,6 @@
 		            <thead>
 			            <tr><th width="25%">Week</th><th width="25%">Topic</th><th width="50%">Homework</th></tr>
 		            </thead>
-		            <tbody id="hw"></tbody>
 		        </table>
 	        </div>
 	    </div>
