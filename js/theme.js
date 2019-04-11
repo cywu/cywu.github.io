@@ -4,7 +4,7 @@
 const themeSetter=function () {
     const depth=(window.location.pathname.match(/\//g) || []).length;
     const dirPrefix = Array(depth).join("../"); //to get to the `root' dir
-    const today=new Date(2019,0,1);
+    const today=new Date();
     const thisYear = today.getFullYear();
     const holidayList = {
 	    "newYear1": {"name": "new-year",
@@ -47,7 +47,7 @@ const themeSetter=function () {
     };
     
     function themeCSSPath() {
-	    const str=theme ();
+	    let str=theme ();
 	    if (str===null) {
 	        str="1";
 	    }
