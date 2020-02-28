@@ -262,6 +262,25 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
     }
 }
 
+.nuts-schedule {
+    grid-gap:.5em;
+}
+.nuts-item-date{
+}
+.nuts-item-name{
+    
+}
+.nuts-item-title{
+    
+}
+.nuts-item-abstract::before{
+    content:"Abstract: ";
+    font-weight:bold;
+}
+.nuts-separator {
+    border-width:1px 0 0 0;
+    border-style:solid;
+}
 @media all and (max-width: 600px){
     .conference-schedule{
         grid-template-columns:1fr 1fr;

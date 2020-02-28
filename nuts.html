@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="js/util.js"></script>
+	    <script src="js/theme.js"></script>
+	    <script>
+         document.addEventListener("DOMContentLoaded",(e)=>{
+             const th=themeSetter();
+             const themeElement=document.getElementById("theme");
+             themeElement.setAttribute("href", th.themeCSSPath());
+	     });
+	    </script>
+	    <link rel="stylesheet" href="css/basic.css"/>
+	    <link id="theme" rel="stylesheet" href="css/style-1.css"/>
+	    <title>Nuts @ University of Melbourne</title>
+    </head>
+    <body>
+	    <div class="page">
+  	        <div class="main">
+		        <div class="title-banner">
+		            <h1>Number Theory Seminar @ University of Melbourne</h1>
+		        </div>
+                <div>
+                    <p>Alex Ghitza and I are running a working seminar on things number-theoretic.
+                        Unless otherwise specified, we meet on Tuesdays at 11am in room 107 (Peter Hall building).</p>
+                    <p>You can be informed of future talks by <a href="https://www.freelists.org/list/nuts">subscribing to the mailing list</a> (enter your preferred email address in the textbox labeled "Your email address", choose the action "Subscribe" below it and click the button "Go!").</p>
+                </div>
+            </div>
+            <div class="standout">
+                <div class="grid-container nuts-schedule">
+                    <div class="nuts-item-date">
+                        <h3>10 Mar., 2020</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Title: tba
+                    </div>
+                    <div class="nuts-item-name">
+                        Speaker: tba
+                    </div>
+                    <div class="nuts-item-abstract">
+                        tba
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
