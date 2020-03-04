@@ -263,11 +263,13 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
 }
 
 .nuts-schedule {
-    grid-gap:.5em;
+    grid-gap:2em;
 }
 .nuts-item {
     display:grid;
-    grid-gap:1em;
+    grid-gap:.5em;
+}
+.nuts-item-notes{
 }
 .nuts-item-date{
 }
