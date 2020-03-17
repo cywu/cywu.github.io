@@ -317,3 +317,6 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
     }
 }
 
+.strikeout {
+    text-decoration:line-through 2px;
+}
