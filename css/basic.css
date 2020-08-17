@@ -37,10 +37,10 @@ body{
 
 
 h1 {
-  font-size: 24pt;
+  font-size: 20pt;
 }
 h2 {
-  font-size: 20pt;
+  font-size: 18pt;
 }
 
 ul.plain{
@@ -236,7 +236,7 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
     .conference-schedule{
         grid-template-columns:1fr 1fr 4fr;
         grid-template-rows:auto;
-        grid-gap:.5em;
+        grid-gap:.5rem;
     }
     .item-abstract{
         grid-column:2/span 2;
@@ -263,11 +263,15 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
 }
 
 .nuts-schedule {
-    grid-gap:2em;
+    grid-gap:2rem;
 }
 .nuts-item {
     display:grid;
-    grid-gap:.5em;
+    grid-gap:.5rem;
+    background-color:white;
+    padding:8px 10px 18px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
 }
 .nuts-item-notes{
 }
@@ -291,7 +295,7 @@ hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bott
     .conference-schedule{
         grid-template-columns:1fr 1fr;
         grid-template-rows:auto;
-        grid-gap:.5em;
+        grid-gap:.5rem;
     }
     .item-abstract{
         grid-column:1/span 2;
