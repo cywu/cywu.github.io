@@ -2,10 +2,8 @@ html,body {
   background-color: #FFFFEE;
   color: #336666;
 }
-
 a:visited {
   color: #CC0033;
- 
 }
 a:link {
   color: #996633;
@@ -18,5 +16,8 @@ a:hover {
     text-shadow:1px 1px 0px #a9a177;
 }
 .standout{
+    background-color:#fefcf3;
+}
+.nuts-item{
     background-color:#fefcf3;
 }

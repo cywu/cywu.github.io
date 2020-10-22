@@ -5,16 +5,20 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <script src="js/util.js"></script>
 	    <script src="js/theme.js"></script>
-	    <script>
-         document.addEventListener("DOMContentLoaded",(e)=>{
-             const th=themeSetter();
-             const themeElement=document.getElementById("theme");
-             themeElement.setAttribute("href", th.themeCSSPath());
-	     });
-	    </script>
-	    <link rel="stylesheet" href="css/basic.css"/>
+        <link rel="stylesheet" href="css/basic.css"/>
 	    <link id="theme" rel="stylesheet" href="css/style-1.css"/>
-	    <title>Nuts @ University of Melbourne</title>
+        <script>
+         const rootElem=document.documentElement;
+         rootElem.classList.add ("invisible"); //an attempt to avoid css style change after page shows up.
+         const th=themeSetter();
+         const cssPath=th.themeCSSPath();
+         const themeElement=document.getElementById("theme");
+         themeElement.setAttribute("href", cssPath);
+         document.addEventListener ("DOMContentLoaded",(e)=>{
+             rootElem.classList.remove ("invisible");
+         });
+        </script>
+        <title>Nuts @ University of Melbourne</title>
     </head>
     <body>
 	    <div class="page">

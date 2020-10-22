@@ -5,16 +5,19 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <script src="js/util.js"></script>
 	    <script src="js/theme.js"></script>
-	    <script>
-         document.addEventListener("DOMContentLoaded",(e)=>{
-             const th=themeSetter();
-             const themeElement=document.getElementById("theme");
-             themeElement.setAttribute("href", th.themeCSSPath());
-	     });
-	    </script>
-	    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
 	    <link rel="stylesheet" href="css/basic.css"/>
 	    <link id="theme" rel="stylesheet" href="css/style-1.css"/>
+        <script>
+         const rootElem=document.documentElement;
+         rootElem.classList.add ("invisible"); //an attempt to avoid css style change after page shows up.
+         const th=themeSetter();
+         const cssPath=th.themeCSSPath();
+         const themeElement=document.getElementById("theme");
+         themeElement.setAttribute("href", cssPath);
+         document.addEventListener ("DOMContentLoaded",(e)=>{
+             rootElem.classList.remove ("invisible");
+         });
+        </script>
 	    <title>Chenyan Wu's Homepage</title>
     </head>
     <body>
@@ -34,12 +37,16 @@
 		        </div>
 		        <div class="overlay-item button1 flex-col">
 		            <div class="ui-button fill-up flex-col center-center">
-			            <i class="fa fa-plus fa-lg fa-fw" aria-hidden="true" aria-label="open menu"></i>
-		            </div>
+			            <svg class="feather">
+                            <use href="img/feather-sprite.svg#plus"/>
+                        </svg>
+                    </div>
 		        </div>
 		        <div class="overlay-item button2 flex-col">
 		            <div class="ui-button fill-up flex-col center-center">
-			            <i class="fa fa-minus fa-lg fa-fw" aria-hidden="true" aria-label="collapse menu"></i>
+                        <svg class="feather">
+                            <use href="img/feather-sprite.svg#minus"/>
+                        </svg>
 		            </div>
 		        </div>
 	        </div>

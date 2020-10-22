@@ -1,11 +1,23 @@
+html,body{
+    background-color: #F9F9F9;
+}
 a:visited {
-  color: #4d78c7;
+    color: #4d78c7;
 }
 a:link {
-  color: #339999;
+    color: #339999;
 }
 a:hover {
-  color: #6633ff;
+    color: #6633ff;
 }
-
+.title-banner{
+    background-color:rgb(161, 203, 201);
+}
+.standout{
+    background-color:white;
+}
+.nuts-item{
+    background-color:white;
+}
+    
 
