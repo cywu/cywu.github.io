@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-11-15 Sun 23:36 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Firefox Extension</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Chenyan Wu" />
+<script src="../js/util.js"></script>
+<script src="../js/theme.js"></script>
+<link rel="stylesheet" href="../css/basic.css"/>
+<link id="theme" rel="stylesheet" href="../css/style-1.css"/>
+<script>
+ const rootElem=document.documentElement;
+ rootElem.classList.add ("invisible"); //an attempt to avoid css style change after page shows up.
+ const th=themeSetter();
+ const cssPath=th.themeCSSPath();
+ const themeElement=document.getElementById("theme");
+ themeElement.setAttribute("href", cssPath);
+ document.addEventListener ("DOMContentLoaded",(e)=>{
+     rootElem.classList.remove ("invisible");
+ });
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My Firefox Extension</h1>
+<p>
+[Edit: As University of Melbourne has moved away from using ezproxy for accessing academic databases, I don't use this any more. I should probably remove the default ezproxy value.]
+</p>
+
+
+<p>
+<a href="https://addons.mozilla.org/en-GB/firefox/addon/ezproxy-switcher/">My Firefox extension</a> to make downloading academic papers easier in the University of Melbourne or potentially other universities as well. When you land on a page with the article that you want to read and hit a paywall, just click the button of this extension instead of dejectedly going to the library site and starting search all over. You will see the paywall gone and the article can be downloaded if you are logged in with your university already. Or you will get taken to the log-in page of the university if you are not logged in yet. In this case, log in to get redirected to the article automatically. Please let me know if it works for you or not. <a href="https://github.com/cywu/via-ezproxy">Source code here.</a> I'm obviously not very decided with the name of the extension.
+</p>
+</div>
+</body>
+</html>
