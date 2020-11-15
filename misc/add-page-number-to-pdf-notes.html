@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-15 Sun 22:10 -->
+<!-- 2020-11-15 Sun 23:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>LaTeX Challenges :)</title>
+<title>How to Add Page Numbers to pdf</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Chenyan Wu" />
 <script src="../js/util.js"></script>
@@ -73,24 +73,35 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">LaTeX Challenges :)</h1>
-
-<div id="outline-container-orgb17e76d" class="outline-2">
-<h2 id="orgb17e76d"><span class="section-number-2">1</span> Typeset '(๑•̀ㅂ•́)و✧' in LaTeX.</h2>
-<div class="outline-text-2" id="text-1">
+<h1 class="title">How to Add Page Numbers to pdf</h1>
 <p>
-This emoticon involves Thai, Chinese, Japanese, Korean, Arabic&#x2026; (╯°□°)╯︵ ┻━┻ 
+With the prevalence of Zoom seminars, I have an increasing amount of handwritten notes&#x2026; without page numbers. Once you print them out and let wind ruffle them or you turn them back and forth for too many times, you get lost. Once you get lost, the quickest remedy is to reprint a copy and remember to staple the pages this time!!!
 </p>
 
 <p>
-Challenge accepted! <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.pdf">pdf »</a> <a href="https://github.com/cywu/latex-test/blob/master/emoji-test.tex">tex »</a>
+Anyway let's just add page numbers. As academics always have a LaTeX suite, we'll just use this file
 </p>
 
-<p>
-That's all for now.
-</p>
+<div class="org-src-container">
+<pre class="src src-latex">\documentclass{article}
+\usepackage[margin=.7in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% clear all header and footer
+\fancyhf {}
+\fancyhead[R]{\Large\thepage}
+\renewcommand{\headrulewidth} {0pt}
+\usepackage{pdfpages}
+\begin{document}
+\includepdf[pages=-,pagecommand={\thispagestyle{fancy}}]{notes.pdf}
+\end{document}
+</pre>
 </div>
-</div>
+
+<p>
+If you have fish shell, you can run this script which, in addition, can extract pages and combine several pdf. If you don't need the page number business, there is <a href="http://qpdf.sourceforge.net/">qpdf</a> which doesn't need a LaTeX suite. One institute made me stitch my pdf into one when submitting my application. It was definitely not Melbourne.
+</p>
+<script src="https://gist.github.com/cywu/797136fae3ee619e7a7c5442b2005c99.js"></script>
 </div>
 </body>
 </html>

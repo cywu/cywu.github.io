@@ -9,7 +9,7 @@ body{
 }
 
 @media all and (min-width: 860px){
-    div.page{
+    div.page, #content{
 	width: 800px;
 	padding-right: 30px;
 	padding-left: 30px;
@@ -21,7 +21,7 @@ body{
 }
 
 @media all and (max-width: 860px){
-    div.page{
+    div.page, #content{
 	padding-right: 3.5vw;
 	padding-left: 3.5vw;
 	padding-top: 10px;
@@ -97,8 +97,13 @@ table th, td {
 /* Inset, by Dan Eden */
 /* hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.3); } */
 
-.header{
+.header {
     border-bottom:solid 1px;
+}
+
+.title{
+    border-bottom:solid 1px;
+    padding-bottom: 1rem;
 }
 .footer{
     padding-top:10px;
@@ -327,4 +332,16 @@ table th, td {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+/* for adding a dot to org generated header numbering */
+.section-number-1::after, .section-number-2::after, .section-number-3::after, .section-number-4::after{
+    content: '.';
+}
+
+pre {
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
 }
