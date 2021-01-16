@@ -17,7 +17,7 @@ const themeSetter=function () {
 		             "aft": 0},
 	    //ad hoc patch for chinese new year. 
 	    "springfestival":{"name": "spring-festival",
-			              "date": new Date(2018, 1, 16),
+			              "date": new Date(2021, 1, 12),
 			              "fore": 0,
 			              "aft": 6},
 	    "valentine": {"name": "214",
