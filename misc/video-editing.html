@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-22 Thu 13:36 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Video Editing</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Chenyan Wu" />
+<script src="../js/util.js"></script>
+<script src="../js/theme.js"></script>
+<link rel="stylesheet" href="../css/basic.css"/>
+<link id="theme" rel="stylesheet" href="../css/style-1.css"/>
+<script>
+ const rootElem=document.documentElement;
+ rootElem.classList.add ("invisible"); //an attempt to avoid css style change after page shows up.
+ const th=themeSetter();
+ const cssPath=th.themeCSSPath();
+ const themeElement=document.getElementById("theme");
+ themeElement.setAttribute("href", cssPath);
+ document.addEventListener ("DOMContentLoaded",(e)=>{
+     rootElem.classList.remove ("invisible");
+ });
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Video Editing</h1>
+<p>
+After tinkering with making pre-recorded lectures, I just have to record the various tricks I have to avoid having to figure them out again.
+</p>
+
+<div id="outline-container-org5a4c221" class="outline-2">
+<h2 id="org5a4c221">Recording</h2>
+<div class="outline-text-2" id="text-org5a4c221">
+<p>
+Software: OBS, QuickTime, Goodnotes
+</p>
+
+<p>
+Use OBS. I make a scene containing Webcam and QuickTime. QuickTime captures what is shown on my iPad. I use Goodnotes to show slides and I write on slides as I go.
+</p>
+
+<p>
+There is a way to force Goodnotes to go into Presentation Mode, so that you don't show its interface. Another advantage is that your notification will not show up either, as I heard. The trick is the as follows. [<a href="https://obsproject.com/forum/threads/obs-over-riding-mirror-preference.125730/">https://obsproject.com/forum/threads/obs-over-riding-mirror-preference.125730/</a>]
+</p>
+
+<p>
+My method is only slightly different as I let OBS capture QuickTime rather than iPad directly.
+</p>
+
+<ul class="org-ul">
+<li>Connect iPad to Mac with cable.</li>
+<li>Open QuickTime and select "New Movie Recording" without actually starting the recording. Instead, press arrow next to the recording button, select iPad as "camera".</li>
+<li>Open OBS. The scene will appear. Goodnotes is not in presentation mode.</li>
+<li>Magic moment: Unplug and replug the cable. Goodnotes is in presentation mode now.</li>
+<li>Since QuickTime gives me two black blocks of padding at the top and bottom, in OBS, I set up 270px cropping at top and bottom in the Edit Transform dialogue.</li>
+</ul>
+
+<p>
+After recording, exit OBS, stop QuickTime and unplug cable. Just clean up properly. If you don't clean up properly, next time QuickTime may show a blank screen for your iPad capture and you will have to restart iPad to fix the issue.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc857fa0" class="outline-2">
+<h2 id="orgc857fa0">Editing</h2>
+<div class="outline-text-2" id="text-orgc857fa0">
+<p>
+Software: Blender
+</p>
+
+<p>
+First I tried to use iMovie to add a line of text. I couldn't find a way to place it where I wanted. I also needed to remux from mkv to mp4 or it can't be imported. Thus I switched to Blender. It is a 3D modelling software and in particular you can produce 3D animation which is a video and thus unsurprisingly you can edit video clips in with Blender.
+</p>
+
+<p>
+Use the Video Editing tab and there is no need to go anywhere else. I am relatively familiar with Blender. For example, I know, to add object, you press shift-A. Add your video clips in.
+</p>
+
+<p>
+Use the sequencer. By default in the Dimension panel, Frame End is 250 which will chop off a large chunk of my video. I don't know any good way to set that; I just use F3 to search for the command "Set Frame Range to Strips".
+</p>
+
+<p>
+Use the circle ends of the horizontal bar in the sequencer to zoom in and out in the sequencer. In Overlay, the small button in the upper left corner of the Sequencer that shows two overlapping circles, I set Waveforms On. In this way, I can see the waveform of the audio channel and I find it easier to locate where I want to add text.
+</p>
+
+<p>
+Add text as you add any object in Blender. You can set its location and duration and fade it in and out.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgafbed2a" class="outline-2">
+<h2 id="orgafbed2a">Merging clips</h2>
+<div class="outline-text-2" id="text-orgafbed2a">
+<p>
+Software: Blender, FFmpeg
+</p>
+
+<p>
+I can do this in Blender by adding in multiple files and place them in the Sequencer. If no editing is needed, I can use ffmpeg directly. [<a href="https://trac.ffmpeg.org/wiki/Concatenate">https://trac.ffmpeg.org/wiki/Concatenate</a>]
+</p>
+
+<ul class="org-ul">
+<li>make a file mylist.txt</li>
+</ul>
+<pre class="example" id="org8a7ad0a">
+# this is a comment
+file '/path/to/file1.mkv'
+file '/path/to/file2.mkv'
+file '/path/to/file3.mkv'
+</pre>
+
+<p>
+Note that these can be either relative or absolute paths.
+</p>
+
+<ul class="org-ul">
+<li>apply ffmpeg</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sh">ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mkv
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7321be8" class="outline-2">
+<h2 id="org7321be8">Exporting from Blender</h2>
+<div class="outline-text-2" id="text-org7321be8">
+<p>
+Software: Blender
+</p>
+
+<p>
+Use the Output Properties in the side bar of Blender. As this is not exporting a video of 3D animation, I will just output FFmpeg Video. I set video codec to H.264 and output quality to Medium Quality and set audio Codec to MP3. (Actually I just want a fast way to get the video out and then I will apply x.265 to it to make it much smaller. I don't know which one is the fastest.) And then I just hit Render Animation. Then it is waiting time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a65c7c" class="outline-2">
+<h2 id="org4a65c7c">Making video file size smaller</h2>
+<div class="outline-text-2" id="text-org4a65c7c">
+<p>
+Software: FFmpeg
+</p>
+
+<p>
+After taking a break, you notice that your file size is huge.
+According to the info from stackexchange, x.265 codec is currently the best. It is said -crf 24 to 30 are all reasonable and that lower number gives higher quality. You apply
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
+</pre>
+</div>
+
+<p>
+And you are left with a video about 1/6 of the previous size.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
