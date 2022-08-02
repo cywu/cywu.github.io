@@ -324,6 +324,10 @@ table th, td {
     text-decoration:line-through 2px;
 }
 
+.fadedout {
+    opacity:20%;
+}
+
 .feather {
   width: 24px;
   height: 24px;
