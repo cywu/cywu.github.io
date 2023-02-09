@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="js/util.js"></script>
+	    <script src="js/theme.js"></script>
+        <link rel="stylesheet" href="css/basic.css"/>
+	    <link id="theme" rel="stylesheet" href="css/style-1.css"/>
+        <script>
+         const rootElem=document.documentElement;
+         rootElem.classList.add ("invisible"); //an attempt to avoid css style change after page shows up.
+         const th=themeSetter();
+         const cssPath=th.themeCSSPath();
+         const themeElement=document.getElementById("theme");
+         themeElement.setAttribute("href", cssPath);
+         document.addEventListener ("DOMContentLoaded",(e)=>{
+             rootElem.classList.remove ("invisible");
+         });
+        </script>
+        <title>Nuts @ University of Melbourne</title>
+    </head>
+    <body>
+	    <div class="page">
+  	        <div class="main">
+		        <div class="title-banner">
+		            <h1>Number Theory Seminar @ University of Melbourne</h1>
+                    <h2></h2>
+		        </div>
+                <div>
+                    <p>Alex Ghitza and I are running a working seminar on things number-theoretic.</p>
+                    <p>Time: 13:00-14:00 Mon. (Melbourne local time) for 2022S2.</p>
+                    <p>Venue: Peter Hall Building 107.</p>
+                    <p>Zoom: Please join the mailing list to receive the Zoom link. </p>
+                    <p>Topic: Automorphic representations. We plan to follow Getz and Hahn's book: An Introduction to Automorphic Representations with a view toward Trace Formulae. We will start from Chapter 3.</p>
+                    <p>Please go to the <a href="https://numbertheory.science.unimelb.edu.au/#tab19">Number Theory Research Group website</a> where you can find a link to join our mailing list. You will receive the Zoom link and announcements of talks.</p>
+                    <p class="fadedout">For the past semester 2022S1:</p>
+                    <p class="fadedout">Time: 12:00-13:00 Fri. (Melbourne local time).</p>
+                    <p class="fadedout">Venue: Outdoors on the Peter Hall Building lawn. Weather not permitting, Peter Hall Building 107.</p>
+                    <p class="fadedout">Topic: Basic Notions in Modular Forms and Automorphic Forms.</p>
+                </div>
+            </div>
+            <!-- Notes are in the notes/ folder. remember this prefix when updating. -->
+
+
+            <div class="grid-container nuts-schedule">
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>2 Dec., 2022</h3>
+                    </div>
+                    <div class="nuts-item-notes">
+                        Special Joint Number Theory and Representation Theory Seminar: 14:00-15:00, Peter Hall 107.
+                    </div>
+
+                    <div class="nuts-item-title">
+                        Large values of eigenfunctions on hyperbolic manifolds
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://people.math.wisc.edu/~marshall/">Simon Marshall (University of Wisconsin-Madison)</a>
+                    </div>
+                    <div class="nuts-item-abstract">
+                        It is a folklore conjecture that the sup norm of a Laplace eigenfunction on a compact hyperbolic surface grows more slowly than any positive power of the eigenvalue.  In dimensions three and higher, this was shown to be false by Iwaniec-Sarnak and Donnelly.  I will present joint work with Farrell Brumley that strengthens these results, and extends them to locally symmetric spaces associated to SO(p,q).
+                    </div>
+                    </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>24 Oct., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Forms
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>17 Oct., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Flath's Theorem
+                    </div>
+                    <div class="nuts-item-name">
+                        Yiannis Fam (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>10 Oct., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Spherical Hecke Algebras and Restricted Tensor Products
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>3 Oct., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Representation Theory of Totally Disconnected Groups
+                    </div>
+                    <div class="nuts-item-name">
+                        Yiannis Fam (the University of Melbourne)
+                    </div>
+                    <div class="nuts-item-notes">
+                        Note: Melbourne has entered daylight saving time.
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>26 Sept., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Semester Break
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>19 Sept., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Archimedean Representation Theory
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>12 Sept., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        (𝔤, K)-modules and Admissible Representations
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>5 Sept., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Representations of Lie groups, with a view towards understanding the algebraic approach to the archimedean components of automorphic representations
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>29 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Representations III
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>22 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        On the unramified spherical automorphic spectrum
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://heiermann.perso.math.cnrs.fr/">Volker Heiermann (Université d'Aix-Marseille)</a>
+                    </div>
+                    <div class="nuts-item-abstract">
+                        I will give an introduction to common work with Marcelo De Martino and Eric Opdam, where we determine (for the moment in the number field case for a split group and supported in the trivial representation of the maximal torus) the automorphic spherical spectrum following the method initiated by Langlands using contour shift. It is based on a residue distribution approach developed previously by Eric Opdam and Gerrit Heckman. For exceptional groups, computer assistance was needed.
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>15 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Representations II
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>8 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Moduli stacks of Galois representations
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="http://www.math.uchicago.edu/~emerton/">Matthew Emerton (University of Chicago)</a>
+                    </div>
+                    <div class="nuts-item-abstract">
+                        <p>Recent years have seen a confluence between ideas coming from each of the arithmetic and geometric sides of the Langlands program.   One manifestation of this is the rising importance of the consideration of moduli stacks of local and global Galois representations and related objects, going under the general heading of Langlands parameters.</p>
+                        <p>In this talk I will describe these moduli stacks --- their definitions and basic structure, illustrated through examples --- in various local and global contexts.  I will also briefly indicate the role they play in contemporary formulations of the Langlands program.</p>
+                        <p>The talk will explain the work of many different researchers, but will include discussions of recent and ongoing work of the speaker in collaboration with Toby Gee and Xinwen Zhu.</p>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>4 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        A multiplicity formula of <var>K</var>-types
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://sites.rutgers.edu/chen-wan/">Chen Wan (Rutgers University, Newark)</a>
+                    </div>
+                    <div class="nuts-item-notes">
+                        Special joint seminar with Representation Theory Seminar. Note special date and time: 15:15 - 17:00, 4 Aug. Location is still 107 Peter Hall Building.
+                    </div>
+                    <div class="nuts-item-abstract">In this talk, by using the trace formula method, I will prove a multiplicity formula of <var>K</var>-types for all representations of real reductive groups in terms of the Harish-Chandra character.
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>1 Aug., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Representations I
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://aghitza.org/">Alex Ghitza (the University of Melbourne)</a>
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>17 June, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        A Gross-Zagier Formula for CM cycles over Shimura Curves
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://math.wisc.edu/staff/wen-boya/">Boya Wen (University of Wisconsin - Madison)</a>
+                    </div>
+                    <div class="nuts-item-notes">
+                        Note: Special location at Evan Williams G03. This is the last talk of 2022S1. We will resume in Semester 2.
+                    </div>
+                    <div class="nuts-item-abstract">
+                        This talk is based on my thesis work and joint work (in progress) with Congling Qiu. I will introduce a Gross-Zagier formula for CM cycles over Shimura curves. The formula connects the global height pairing of CM cycles in Kuga varieties over Shimura curves with the derivatives of the L-functions associated to weight-2k modular forms. As a key original ingredient of the proof, I will introduce some harmonic analysis on local systems over graphs, including an explicit construction of Green's function, which we apply to compute suitable integral extensions of the CM cycles, and local intersections at primes where the quaternion algebra associated with the Shimura curve ramifies.
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>3 June, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Forms, a Generalisation of Modular Forms, Part 2
+                    </div>
+                    <div class="nuts-item-name">
+                        Chenyan Wu (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>27 May, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Iwasawa Theory of Class Group Schemes
+                    </div>
+                    <div class="nuts-item-name">
+                        <a href="https://www.math.arizona.edu/~cais/">Bryden Cais (the University of Arizona)</a>
+                    </div>
+                    <div class="nuts-item-notes">
+                        Note: Joint with the Pure Maths Seminar; special Time 11:30 - 13:00
+                    </div>
+                    <div class="nuts-item-abstract">
+                        Iwasawa theory is the study of the growth of arithmetic invariants in 
+                        Galois extensions of global fields with Galois group a <var>p</var>-adic Lie group.  Beginning with Iwasawa's seminal work
+                        in which he proved that the <var>p</var>-primary part of the class group in ℤ<sub><var>p</var></sub>-extensions of
+                        number fields grows with striking and unexpected regularity, Iwasawa theory has become a central
+                        strand of modern number theory and arithmetic geometry.  While the theory
+                        has traditionally focused on towers of number fields, the function field setting 
+                        has been studied extensively, and has important applications to the theory of <var>p</var>-adic modular forms.  
+                        This talk will introduce an exciting new kind of <var>p</var>-adic Iwasawa theory for towers of function fields over 
+                        finite fields of characteristic <var>p</var>, and discuss some applications to problems and open conjectures in the field.
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>20 May, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Automorphic Forms, a Generalisation of Modular Forms, Part 1
+                    </div>
+                    <div class="nuts-item-name">
+                        Chenyan Wu (the University of Melbourne)
+                    </div>
+                    <div class="nuts-item-notes">
+                        <a href="notes/Chenyan Wu-20220520-Generalising modular forms-notes taken by Chengjing Zhang.pdf">Notes</a> taken by Chengjing Zhang
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>13 May, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Some Applications of Modular Forms
+                    </div>
+                    <div class="nuts-item-name">
+                        Yiannis Fam (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>6 May, 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Geometric Aspects of Modular Forms
+                    </div>
+                    <div class="nuts-item-name">
+                        Alex Ghitza (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>27 Apr., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Siegel Modular Forms
+                    </div>
+                    <div class="nuts-item-name">
+                        Chengjing Zhang (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>15 Apr. and 22 Apr., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        No talks due to Easter Holidays
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>8 Apr., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Hecke Operators
+                    </div>
+                    <div class="nuts-item-name">
+                        Alex Ghitza (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>1 Apr., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Modular Forms of Half Integral Weight
+                    </div>
+                    <div class="nuts-item-name">
+                        Alex Ghitza (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>25 Mar., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        A Recap on Modular Forms
+                    </div>
+                    <div class="nuts-item-name">
+                        Chenyan Wu (the University of Melbourne)
+                    </div>
+                </div>
+                <div class="nuts-item">
+                    <div class="nuts-item-date">
+                        <h3>18 Mar., 2022</h3>
+                    </div>
+                    <div class="nuts-item-title">
+                        Algebraic Groups, Mostly Classical Groups
+                    </div>
+                    <div class="nuts-item-name">
+                        Chenyan Wu (the University of Melbourne)
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
