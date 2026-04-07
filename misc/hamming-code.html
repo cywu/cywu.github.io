@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Chenyan Wu" />
+  <title>Ideas of Hamming Code </title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Ideas of Hamming Code </h1>
+<p class="author">Chenyan Wu</p>
+</header>
+<p><span><strong>Problem:</strong></span> Want to transmit <span
+class="math inline">n</span> bits, which we call data bits. But the
+transmission process can corrupt the bits. How to detect if there is
+corruption.</p>
+<p><span><strong>Assumption:</strong></span> The transmission process
+corrupts at most <span class="math inline">1</span> bit, also called bit
+flip, i.e., changing <span class="math inline">0</span> to <span
+class="math inline">1</span> or <span class="math inline">1</span> to
+<span class="math inline">0</span>.</p>
+<p>Solve the problem under this assumption and then consider worse
+situations later (not included in the current notes). In any case, we
+cannot allow too much corruption. Sometimes you just have to improve the
+medium of transmission first.</p>
+<p><span><strong>Idea:</strong></span> Parity check.<br />
+Transmit <span class="math inline">n+1</span> bits. The <span
+class="math inline">n</span> data bits and <span
+class="math inline">1</span> more bit such that the sum of the all
+transmitted bits is <span class="math inline">0</span> modulo <span
+class="math inline">2</span>.</p>
+<div class="eg">
+<p><em>Example 1</em>. Data bits: <span
+class="math inline">11011</span>. Parity check bit: <span
+class="math inline">0</span>. Should transmit: <span
+class="math inline">110110</span>.</p>
+</div>
+<p>When the receiver receives the bits, add them up modulo <span
+class="math inline">2</span>. If the result is <span
+class="math inline">0</span>, then no corruption. If the result is <span
+class="math inline">1</span>, then there is corruption and ask the
+sender to send again and pray the next time there is no corruption.</p>
+<div class="eg">
+<p><em>Example 2</em>. Transmitted: <span
+class="math inline">110110</span>.<br />
+Received: <span class="math inline">110110</span>. Sum: <span
+class="math inline">0</span>. No corruption.<br />
+Received: <span class="math inline">110010</span>. Sum: <span
+class="math inline">1</span>. Has corruption.<br />
+Received: <span class="math inline">110111</span>. Sum: <span
+class="math inline">1</span>. Has corruption. (It is possible that the
+bit flip happens for the parity check bit.)<br />
+Received: <span class="math inline">110000</span>. Sum: <span
+class="math inline">0</span>. Not possible under the at most <span
+class="math inline">1</span>-bit flip assumption.<br />
+In this example, Sum is taken modulo <span
+class="math inline">2</span>.</p>
+</div>
+<p><span><strong>New problem:</strong></span> Too passive! The receiver
+wants to be able to detect if there is corruption and, in addition,
+wants to determine which bit is flipped and thus will be able to correct
+it.</p>
+<p><span><strong>Idea:</strong></span> Put in more parity checks and the
+combo of failed parity checks somehow should pinpoint where the
+corruption is.</p>
+<p><span><strong>Estimate how many parity checks are
+needed:</strong></span> Transmit <span class="math inline">n+r</span>
+bits: <span class="math inline">n</span> bits are the data bits and
+<span class="math inline">r</span> bits for parity checks.</p>
+<p>Total <span class="math inline">n+r+1</span> outcomes: one of the
+<span class="math inline">n+r</span> bits is corrupted or nothing is
+corrupted. The <span class="math inline">r</span> bits for parity checks
+can represent <span class="math inline">2^{r}</span> numbers. Thus given
+<span class="math inline">n</span>, we choose <span
+class="math inline">r</span> such that <span class="math inline">2^{r}
+\ge n+r+1</span>.</p>
+<p><span><strong>Need a dictionary from combo of failed checks to
+position of corrupted bit:</strong></span> (If all parity checks pass,
+then there is no corruption.)</p>
+<p>Label the positions of all total bits: <span
+class="math inline">1,2,3,\ldots,n+r</span>. Set <span
+class="math inline">P := \{1,2,3,\ldots,n+r  \}</span>. Let <span
+class="math inline">C</span> be the subset of <span
+class="math inline">P</span> corresponding to the positions of the
+parity check bits. We will choose <span class="math inline">C</span>
+appropriately later. Let <span class="math inline">v_{i}</span> denote
+the value of the <span class="math inline">i</span>-th bit for <span
+class="math inline">i\in P</span>.</p>
+<p>For <span class="math inline">j\in C</span>, we want to associate a
+subset <span class="math inline">P_{j}</span> of <span
+class="math inline">P</span> such that <span class="math inline">j\in
+P_{j}</span>. We set <span class="math inline">v_{j}</span> to be the
+number such that <span class="math inline">\sum_{i\in P_{j}} v_{i} =
+0</span> modulo <span class="math inline">2</span>, i.e., the <span
+class="math inline">j</span>-th parity check checks the bits at
+positions in <span class="math inline">P_{j}</span>.</p>
+<p>When the receiver receives the bits, they find which parity checks
+fail, in other words, they find the subset <span
+class="math inline">C&#39;</span> of <span class="math inline">C</span>
+such that for <span class="math inline">j\in C&#39;</span>, <span
+class="math inline">\sum_{i\in P_{j}} v_{i} \neq 0</span> modulo <span
+class="math inline">2</span> and for <span class="math inline">j\in
+C\setminus C&#39;</span>, <span class="math inline">\sum_{i\in P_{j}}
+v_{i} = 0</span> modulo <span class="math inline">2</span>. We want to
+choose <span class="math inline">P_{j}</span>’s appropriately so that
+only the flip of one particular bit can result in having <span
+class="math inline">C&#39;</span> as the set of failed parity
+checks.</p>
+<p><span><strong>How to choose <span
+class="math inline">P_{j}</span>’s:</strong></span></p>
+<p>There is an ingenious way devised by Hamming for the choice of <span
+class="math inline">C</span> and <span class="math inline">P_{j}</span>
+for <span class="math inline">j\in C</span>. Set <span
+class="math display">\begin{equation*}
+  C := \{ 1, 10, 100 ,\ldots  \}
+\end{equation*}</span> where the numbers are in radix <span
+class="math inline">2</span>. Set <span
+class="math display">\begin{equation*}
+  P_{j} := \{ i\in P \,\vert\,i \mathop{\mathrm{\mathrm{AND}}}j \neq 0
+\} = \{ \text{number of the form $*\cdots * 1 * \cdots *$, with the $1$
+at location $j$}  \}
+\end{equation*}</span> where <span
+class="math inline">\mathop{\mathrm{\mathrm{AND}}}</span> is the bitwise
+AND operator the numbers are in radix <span
+class="math inline">2</span>.</p>
+<p>Then if <span class="math inline">C&#39;</span> is the set of failed
+parity checks, then <span class="math inline">\sum_{a\in C&#39;}
+a</span> is the position of the bit that is corrupted. (If the sum is
+<span class="math inline">0</span>, this means that there is no
+corruption.)</p>
+<div class="eg">
+<p><em>Example 3</em>. Data bits: <span
+class="math inline">1101</span>.<br />
+It suffices to have <span class="math inline">3</span> parity check
+bits.<br />
+Now all numbers below are in radix <span
+class="math inline">2</span>.</p>
+<p>Position of the parity check bits: <span
+class="math inline">001,010,100</span>. (<span class="math inline">C =
+\{ 001,010,100  \}</span>.)<br />
+<span class="math display">\begin{align*}
+    P_{001} &amp;= \{ **1  \} = \{ 001,011,101,111  \}\\
+    P_{010} &amp;= \{ *\: 1\: *  \} = \{ 010,011,110,111  \}\\
+    P_{100} &amp;= \{ 1**  \} = \{ 100,101,110,111  \}.
+\end{align*}</span></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: right;">Position</td>
+<td style="text-align: center;"><span
+class="math inline">001</span></td>
+<td style="text-align: center;"><span
+class="math inline">010</span></td>
+<td style="text-align: center;"><span
+class="math inline">011</span></td>
+<td style="text-align: center;"><span
+class="math inline">100</span></td>
+<td style="text-align: center;"><span
+class="math inline">101</span></td>
+<td style="text-align: center;"><span
+class="math inline">110</span></td>
+<td style="text-align: center;"><span
+class="math inline">111</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">Value of data bits</td>
+<td style="text-align: center;"><span class="math inline">\underline{\
+}</span></td>
+<td style="text-align: center;"><span class="math inline">\underline{\
+}</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">\underline{\
+}</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">Value of all bits (Sender sends)</td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">Value of all bits (Receiver sees)</td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span
+class="math inline">P_{001}</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span
+class="math inline">P_{010}</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span
+class="math inline">P_{100}</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+<td style="text-align: center;"><span
+class="math inline">\bullet</span></td>
+</tr>
+</tbody>
+</table>
+<p>Then the sender sends <span class="math inline">1010101</span>.
+Assume the receiver receives <span class="math inline">1010111</span>.
+From an all-seeing point of view, we see that the bit at position <span
+class="math inline">110</span> is flipped.</p>
+<p>The receiver checks that the bits with positions in <span
+class="math inline">P_{001}</span> sum to <span
+class="math inline">0</span> modulo <span class="math inline">2</span>;
+the bits with positions in <span class="math inline">P_{010}</span> sum
+to <span class="math inline">1</span> modulo <span
+class="math inline">2</span>; the with positions in <span
+class="math inline">P_{001}</span> sum to <span
+class="math inline">1</span> modulo <span class="math inline">2</span>.
+The three observations mean that the position of the bit that gets
+flipped is not of the form <span class="math inline">**1</span>; it is
+of the form <span class="math inline">*\: 1\: *</span>; it is of the
+form <span class="math inline">1**</span>. Thus it must be at position
+<span class="math inline">110</span>.</p>
+</div>
+</body>
+</html>
